@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { CatPost } from "./types/Cats";
 import { NextPage } from "next";
 import { useState } from "react";
-import CatCard from "./CatCard";
+import CatCard from "../components/CatCard";
 import { Row, Col } from "antd";
 
 interface HomeProps {
