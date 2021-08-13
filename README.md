@@ -1,8 +1,44 @@
-# Assignment 3
-
-Instruction will be given here, but please give me some sleep time first.
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Assignment 3: Single component state managements (useState)
+
+Completed the [assignment #2](https://github.com/insTern-Aug-2021/02-Component-paradigm)?
+
+Are you now inspired to become one of the authors and appear on our statistics page? <br/>
+(as well as inspired in web development in React way :stuck_out_tongue:)
+
+if yes, we have setup something to support your way:
+
+- Unsurprisingly, we have created [the skeleton UI](pages/create.tsx) as `/create` page, along with some code that allows users to upload images and receive a link to their images. <br />
+  **Hint: The implemented code may help you better understand how `useState` works, therefore it's worth spending some time looking at it :smile:.**
+- Two additional APIs has been added. [The one](pages/api/create.ts) is `/api/create`. And [another one](pages/api/upload.ts) is `/api/upload`, which you can disregard.
+
+To make the posting system work, more work is required:
+
+- Manage the state of `<Input />` components corresponds to the value entered by the user. (Because the current situation is that `<Input />` always displays the blank value.)
+- When user clicks the `submit` button, grab the value from all inputs and sends a create request to the `/api/create` endpoint. (API specification is detailed in the section below)
+- **Bonus:** After creation is complete, display [a successful message](https://ant.design/components/message/).
+
+### How to communicate with create API?
+
+There are two approaches to understand how to send a request to the `/api/create` endpoint, in my opinion. One is to read a back-end code directly from [pages/api/create.ts](pages/api/create.ts). Another option, which I recommend, is to explore through the [Postman collection](postman-docs/insTern.postman_collection.json).
+
+If you have never installed Postman before, please head to the [Postman download page](https://www.postman.com/downloads/), install it, and import [postman-docs/insTern.postman_collection.json](postman-docs/insTern.postman_collection.json) finally.
+
+The reason I recommend the latter option is to familiarize yourself with Postman, as we use it to test our API and determine what data is required in the request before we code it in the front-end side.
+
+If your request is properly formatted and processed completely, successfully, and wonderfully, you should see the newly created post on the [homepage](http://localhost:3000/).
+
+## Key objectives
+
+- Able to play with `useState` and gain a sense of how to manipulate the state of a single component in an aesthetically pleasing way.
+- Able to call the API with specified endpoint and schema.
+- Get familiar with Postman.
+
+## Known Issue(s)
+
+- Because the API uses an in-memory database, Next.js will refresh both the front-end and the API handler every time you save the code, resulting in the posts data being reset to a default value (8 posts).
+- Your uploaded file will be saved in [this directory](public/assets/cats/). To avoid wasting disk space, it's best to remove the uploaded files in this folder on a regular basis. (But keep the original file; you can also use git revert on the left-hand side of your Visual Studio Code window to perform this as well)
 
 ## Getting Started
 
