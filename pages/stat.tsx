@@ -10,11 +10,44 @@ interface StatProps {
 }
 
 const Stat: NextPage<StatProps> = ({ posts }) => {
+      
+    // ***** Way 1 : For Loop   *****
+      //   const accumulatedData = {};
+      //   for (let index = 0; index < posts.length; index++ ){
+      //     const element = posts[index];
+      //     if (element.author in accumulatedData) {
+      //       accumulatedData[element.author] += 1;
+      //     } else {
+      //       accumulatedData[element.author] = 1;
+      //     }
+      //   }
+      //   console.log(posts, Object.entries(accumulatedData));
 
+    // ***** Way 2 : Long Reduce   *****
+      // const accumulatedData = posts.reduce((prevAccumulated, {author}) => {
+      //   if(!(author in prevAccumulated)){
+      //     prevAccumulated[author] = 0;
+      //   }
+      //   prevAccumulated[author] += 1;
+      //   return prevAccumulated;
+      //  }, 
+      //  {}
+      // );  
+
+    // ***** Way 3 : Short Reduce   *****
+      // const accumulatedData = posts.reduce(
+      //   (prevAccumulated, {author}) => ({
+      //     ...prevAccumulated,
+      //     [author]: author in prevAccumulated ? prevAccumulated[author] +1 : 1,
+      //   }),
+      //   {}
+      // );
+
+    // ***** Way 4 : Very Short Reduce   *****
     const accumulatedData = posts.reduce(
-      (prevAccumulated, {author}) => ({
-        ...prevAccumulated,
-        [author]: author in prevAccumulated ? prevAccumulated[author] +1 : 1,
+      (prevAcc, {author}) => ({
+        ...prevAcc,
+        [author]: author in prevAcc ? prevAcc[author] +1 : 1,
       }),
       {}
     );
@@ -36,9 +69,8 @@ const Stat: NextPage<StatProps> = ({ posts }) => {
         {
             title: ' The number of images',
             dataIndex: 'number',
-            // defaultSortOrder: 'descend',
+            defaultSortOrder: 'descend',
             sorter: (a, b) => a.number - b.number, 
-            //sortDirections: ['descend'],
         },
     ]
 
@@ -75,4 +107,3 @@ const Stat: NextPage<StatProps> = ({ posts }) => {
 };
 
 export default Stat;
-
