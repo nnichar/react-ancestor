@@ -46,10 +46,13 @@ const CreatePage = () => {
             />
           </Col>
         </Row>
-        <Row justify="space-around">
+        <Row justify="space-around" >
           <Col span={8}>Title: </Col>
           <Col span={8}>
-            <Input value={currentTitle} />
+            <Input 
+              value={currentTitle} 
+              onChange={(e) => setCurrentTitle(e.target.value)}
+            />
           </Col>
         </Row>
         <Row justify="space-around">
