@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { CatPost } from "./types/Cats";
 import Link from "next/link";
 import { Table, Row, Col, Button} from 'antd';
-import {SmileOutlined} from '@ant-design/icons';
+import { HomeOutlined } from '@ant-design/icons';
 
 interface StatProps {
   posts: CatPost[];
@@ -50,7 +50,9 @@ const Stat: NextPage<StatProps> = ({ posts }) => {
             <Row justify="center">
                 <Col >
                     <Link href="/" passHref>
-                        <Button type="primary" size="large" shape="round" icon={<SmileOutlined/> }> Back to Home Page </Button>
+                        <Button type="primary" size="large" shape="round" icon={<HomeOutlined/> }> 
+                            Back to Home Page 
+                        </Button>
                     </Link>
                 </Col>
             </Row>   
