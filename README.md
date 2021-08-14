@@ -11,17 +11,17 @@ if yes, we have setup something to support your way:
 
 - Unsurprisingly, we have created [the skeleton UI](pages/create.tsx) as `/create` page, along with some code that allows users to upload images and receive a link to their images. <br />
   **Hint: The implemented code may help you better understand how `useState` works, therefore it's worth spending some time looking at it :smile:.**
-- Two additional APIs has been added. [The one](pages/api/create.ts) is `/api/create`. And [another one](pages/api/upload.ts) is `/api/upload`, which you can disregard.
+- Two additional APIs has been added. [One](pages/api/create.ts) is `/api/create`. And [the other](pages/api/upload.ts) is `/api/upload`, which you can disregard.
 
 To make the posting system work, more work is required:
 
-- Manage the state of `<Input />` components corresponds to the value entered by the user. (Because the current situation is that `<Input />` always displays the blank value.)
-- When user clicks the `submit` button, grab the value from all inputs and sends a create request to the `/api/create` endpoint. (API specification is detailed in the section below)
-- **Bonus:** After creation is complete, display [a successful message](https://ant.design/components/message/).
+- Manage the state of `<Input />` components corresponds to the value entered by the user. (Currently, `<Input />` always displays the blank value.)
+- When a user clicks the `submit` button, grabs the value from all inputs and sends a create request to the `/api/create` endpoint. (API specification is detailed in the section below)
+- **Bonus:** After creation completed, display [a successful message](https://ant.design/components/message/).
 
 ### How to communicate with create API?
 
-There are two approaches to understand how to send a request to the `/api/create` endpoint, in my opinion. One is to read a back-end code directly from [pages/api/create.ts](pages/api/create.ts). Another option, which I recommend, is to explore through the [Postman collection](postman-docs/insTern.postman_collection.json).
+There are two recommended ways to understand and approach how to send a request to the `/api/create` endpoint, in my opinion. Basically, reading back-end code directly from [pages/api/create.ts](pages/api/create.ts). Or you can explore through the [Postman collection](postman-docs/insTern.postman_collection.json) which i prefer more :wink:.
 
 If you have never installed Postman before, please head to the [Postman download page](https://www.postman.com/downloads/), install it, and import [postman-docs/insTern.postman_collection.json](postman-docs/insTern.postman_collection.json) finally.
 
