@@ -8,7 +8,7 @@ export interface UploadResp {
   url: string;
 }
 
-const decomposeRegex = /(?<dir>.+\/).+\.(?<ext>[a-zA-Z0-9]*)$/;
+const decomposeRegex = /(?<dir>.+(\/|\\)).+\.(?<ext>[a-zA-Z0-9]*)$/;
 
 const UploadHandler = async (
   req: NextApiRequest,

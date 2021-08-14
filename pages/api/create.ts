@@ -1,16 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { addData } from "../../db";
+const data = require("../../db").data;
 
 const CreateHandler = async (
   { body: { author, title, url } }: NextApiRequest,
   res: NextApiResponse
 ) => {
-  await addData({
+  data.push({
     author,
     title,
     url,
   });
-  console.log("addData", addData);
   res.status(200).send("OK");
 };
 

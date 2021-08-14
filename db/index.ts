@@ -18,7 +18,7 @@ const files = readdirSync("public/assets/cats").filter((name) =>
   /^[0-9]{2}\..*/.test(name)
 );
 
-const data: CatPost[] = files.map((fileName, index) => {
+let data: CatPost[] = files.map((fileName, index) => {
   return {
     author: authors[index],
     title: sentence(),
@@ -26,9 +26,6 @@ const data: CatPost[] = files.map((fileName, index) => {
   };
 });
 
-export const readData = () => data;
-export const addData = (element: CatPost) => {
-  console.log("element", element);
-  data.push(element);
-  console.log("data", data);
+module.exports = {
+  data,
 };
