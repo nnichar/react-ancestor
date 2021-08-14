@@ -26,4 +26,6 @@ let data: CatPost[] = files.map((fileName, index) => {
   };
 });
 
-exports.data = data;
+module.exports = {
+  data,
+};
