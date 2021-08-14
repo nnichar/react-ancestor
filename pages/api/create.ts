@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { addData } from "../../db";
+const data = require("../../db").data;
 
 const CreateHandler = (
   { body: { author, title, url } }: NextApiRequest,
   res: NextApiResponse
 ) => {
-  addData({
+  data.push({
     author,
     title,
     url,
