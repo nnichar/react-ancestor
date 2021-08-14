@@ -8,6 +8,7 @@ import CatCard from "../components/CatCard";
 import Link from "next/link";
 import { Row, Col, Button } from "antd";
 import { BarChartOutlined } from "@ant-design/icons";
+import { PlusSquareOutlined } from "@ant-design/icons";
 
 interface HomeProps {
   posts: CatPost[];
@@ -33,10 +34,15 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className=""></div>
       </main>
       <footer className={styles.footer}>
-        {/* <Link href="/stat">Stat Page</Link> */}
+
+        <Link href="/create" passHref>
+            <Button type="primary" size="large" style={{ margin: 100 }} shape="round" icon={<PlusSquareOutlined />}> 
+                Create New Card 
+            </Button>
+        </Link>
 
         <Link href="/stat" passHref>
-            <Button type="primary" size="large" style={{ margin: 200 }} shape="round" icon={<BarChartOutlined />}> 
+            <Button type="primary" size="large" style={{ margin: 100 }} shape="round" icon={<BarChartOutlined />}> 
                 Stat Page 
             </Button>
         </Link>
