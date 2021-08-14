@@ -5,6 +5,7 @@ import { UploadChangeParam } from "antd/lib/upload";
 import { UploadFile } from "antd/lib/upload/interface";
 import { UploadResp } from "./api/upload";
 import Layout, { Content } from "antd/lib/layout/layout";
+import axios from "axios";
 
 const CreatePage = () => {
   const [currentName, setCurrentName] = useState("");
@@ -33,6 +34,21 @@ const CreatePage = () => {
         break;
     }
   };
+
+  const handleSubmit = async () => {
+    console.log("currentName", currentName);
+    console.log("currentTitle", currentTitle);
+    console.log("uploadedFile", uploadedFile);
+    const result = await axios.post(`http://localhost:3000/api/create`,
+    
+     {
+        author: currentName,
+        title: currentTitle,
+        url: uploadedFile[0].url,
+    });
+    console.log("result", result);
+
+  }
 
   return (
     <Row justify="center" style={{ marginTop: "10em" }}>
@@ -69,7 +85,7 @@ const CreatePage = () => {
           </Col>
         </Row>
         <Row justify="center">
-          <Button type="primary">Submit</Button>
+          <Button type="primary" onClick={handleSubmit}>Submit</Button>
         </Row>
       </Col>
     </Row>

@@ -27,4 +27,8 @@ const data: CatPost[] = files.map((fileName, index) => {
 });
 
 export const readData = () => data;
-export const addData = (element: CatPost) => data.push(element);
+export const addData = (element: CatPost) => {
+  console.log("element", element);
+  data.push(element);
+  console.log("data", data);
+};

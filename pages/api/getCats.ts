@@ -2,5 +2,6 @@
 import { readData } from "../../db";
 
 export default function handler(req, res) {
+  console.log("readData", readData());
   res.status(200).json(readData());
 }
