@@ -10,7 +10,6 @@ const CreateHandler = (
     title,
     url,
   });
-  console.log(addData);
   res.status(200).send("OK");
 };
 
