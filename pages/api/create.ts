@@ -10,6 +10,7 @@ const CreateHandler = async (
     title,
     url,
   });
+  console.log("data in create", data);
   res.status(200).send("OK");
 };
 
