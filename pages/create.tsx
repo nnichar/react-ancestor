@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Input, Row, Col, Upload, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined, HomeOutlined } from "@ant-design/icons";
 import { UploadChangeParam } from "antd/lib/upload";
 import { UploadFile } from "antd/lib/upload/interface";
 import { UploadResp } from "./api/upload";
+import Link from "next/link";
 import Layout, { Content } from "antd/lib/layout/layout";
 import axios from "axios";
 
@@ -51,44 +52,62 @@ const CreatePage = () => {
   }
 
   return (
-    <Row justify="center" style={{ marginTop: "10em" }}>
-      <Col span={12}>
-        <Row justify="space-around">
-          <Col span={8}>Your name: </Col>
-          <Col span={8}>
-            <Input
-              value={currentName}
-              onChange={(e) => setCurrentName(e.target.value)}
-            />
+    <div>
+      <Row justify="center" style={{ marginTop: "10em" }}>
+        <Col span={12}>
+          <Row justify="space-around">
+            <Col span={8}>Your name: </Col>
+            <Col span={8}>
+              <Input
+                value={currentName}
+                onChange={(e) => setCurrentName(e.target.value)}
+              />
+            </Col>
+          </Row>
+          <br />
+          <Row justify="space-around" >
+            <Col span={8}>Title: </Col>
+            <Col span={8}>
+              <Input 
+                value={currentTitle} 
+                onChange={(e) => setCurrentTitle(e.target.value)}
+              />
+            </Col>
+          </Row>
+          <br />
+          <Row justify="space-around">
+            <Col span={8}>CAT image (only) </Col>
+            <Col span={8}>
+              <Upload
+                action="/api/upload"
+                maxCount={1}
+                onChange={onUploadStatusChange}
+                fileList={uploadedFile}
+              >
+                <Button icon={<UploadOutlined />}>upload image</Button>
+              </Upload>
+            </Col>
+          </Row>
+          <br />
+          <Row justify="center">
+            <Button type="primary" onClick={handleSubmit}>Submit</Button>
+          </Row>
+        </Col>
+      </Row>
+      <br /><br />
+      <Row justify="center">
+          <Col >
+              <Link href="/" passHref>
+                  <Button type="primary" size="large" shape="round" icon={<HomeOutlined/> }> 
+                      Back to Home Page 
+                  </Button>
+              </Link>
           </Col>
-        </Row>
-        <Row justify="space-around" >
-          <Col span={8}>Title: </Col>
-          <Col span={8}>
-            <Input 
-              value={currentTitle} 
-              onChange={(e) => setCurrentTitle(e.target.value)}
-            />
-          </Col>
-        </Row>
-        <Row justify="space-around">
-          <Col span={8}>CAT image (only) </Col>
-          <Col span={8}>
-            <Upload
-              action="/api/upload"
-              maxCount={1}
-              onChange={onUploadStatusChange}
-              fileList={uploadedFile}
-            >
-              <Button icon={<UploadOutlined />}>upload image</Button>
-            </Upload>
-          </Col>
-        </Row>
-        <Row justify="center">
-          <Button type="primary" onClick={handleSubmit}>Submit</Button>
-        </Row>
-      </Col>
-    </Row>
+      </Row>   
+    </div>
+
+
+
   );
 };
 
