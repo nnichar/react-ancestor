@@ -1,0 +1,42 @@
+[
+  {
+    "author": "Alice",
+    "title": "Aut sunt numquam.",
+    "url": "/assets/cats/01.jpg"
+  },
+  {
+    "author": "Bob",
+    "title": "Aperiam quam quam vero consectetur at voluptatem cumque.",
+    "url": "/assets/cats/02.jpg"
+  },
+  {
+    "author": "Charlie",
+    "title": "Iusto aut accusamus neque nobis illo omnis.",
+    "url": "/assets/cats/03.jpg"
+  },
+  {
+    "author": "Bob",
+    "title": "Dignissimos harum sapiente sunt unde sit reiciendis.",
+    "url": "/assets/cats/04.png"
+  },
+  {
+    "author": "Dave",
+    "title": "Accusantium omnis sit omnis vero tempora laudantium autem veritatis.",
+    "url": "/assets/cats/05.jpeg"
+  },
+  {
+    "author": "Alice",
+    "title": "Mollitia quo earum deserunt ad cum.",
+    "url": "/assets/cats/06.jpeg"
+  },
+  {
+    "author": "Bob",
+    "title": "Totam nulla aut ut incidunt.",
+    "url": "/assets/cats/07.jpeg"
+  },
+  {
+    "author": "Charlie",
+    "title": "Dolores exercitationem iste.",
+    "url": "/assets/cats/08.jpeg"
+  }
+]
