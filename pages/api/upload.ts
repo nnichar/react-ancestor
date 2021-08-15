@@ -31,7 +31,7 @@ const UploadHandler = async (
         renameSync(path, newFilePath);
 
         res.status(200).json({
-          url: newFilePath.replace("public/", ""),
+          url: newFilePath.replace("public", ""),
           filename: newFileName,
         });
         resolve();
