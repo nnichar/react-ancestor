@@ -72,8 +72,8 @@ Home.getInitialProps = async ({ req }) : Promise<HomeProps> => {
     } else {
       host = "localhost:3000";
     }
-    const res = await fetch(`http://${host}/api/getCats`);
+    const res = await fetch(`http://127.0.0.1:3000/api/getCats`);
     return { posts: await res.json() };
 };
 
-export default Home;
+export default Home
